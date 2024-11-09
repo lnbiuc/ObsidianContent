@@ -44,7 +44,7 @@ export default defineNuxtConfig({
   content: {
     sources: {
       github: {
-        prefix: '/blog', // Prefix for routes used to query contents
+        prefix: '/', // Prefix for routes used to query contents
         driver: 'github', // Driver used to fetch contents (view unstorage documentation)
         repo: "lnbiuc/ObsidianNote",
         branch: "main",
