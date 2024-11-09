@@ -3,7 +3,7 @@
 
 <template>
   <main>
-
+    <hr class="my-12" />
     <ContentList path="/blog" v-slot="{ list }">
       <ul>
         <li v-for="article in list" :key="article._path">
@@ -11,7 +11,7 @@
         </li>
       </ul>
     </ContentList>
-    <hr />
+    <hr class="my-12" />
 
     <ContentDoc />
   </main>
