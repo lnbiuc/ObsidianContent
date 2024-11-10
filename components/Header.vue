@@ -1,29 +1,18 @@
 <script setup lang="ts">
 const { data } = await useAsyncData('navigation', () => fetchContentNavigation())
 
-const order = [
-  {
-    path: '/',
-    order: 1,
-  },
-  {
-    path: '/',
-    order: 1,
-  },
-]
 
-const navs = computed(() => {
-  
-})
+const navs = computed(() => data.value ? data.value.sort((a, b) => {
+  if (a.title < b.title) return -1;
+  if (a.title > b.title) return 1;
+  return 0;
+}) : [])
 </script>
 
 <template>
-  <div class="flex flex-row justify-center items-start w-full bg-red-400 h-[60px]">
-    <div v-for="levelOne in data" :key="levelOne._path"  class="text-center bg-black">
-      <div class="h-[60px] w-[100px] flex flex-row items-center justify-center">
-        <NuxtLink  :href="levelOne._path">{{ levelOne.title }}</NuxtLink>
-      </div>
-    </div>
-  </div>
-
+  <Toolbar class="rounded-none w-full">
+    <template #center>
+      <Button class="mx-2" v-for="nav in navs" :key="nav._path" :label="nav.title" text plain @click="$router.push(nav._path)"/>
+    </template>
+  </Toolbar>
 </template>
