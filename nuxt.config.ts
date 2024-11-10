@@ -5,7 +5,7 @@ import { definePreset } from '@primevue/themes';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@primevue/nuxt-module', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/content', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxt/icon'],
 
   routeRules: {
     '/': { prerender: true }

@@ -4,5 +4,5 @@
 
 
 <template>
-  index
+  <WelcomeCard />
 </template>
